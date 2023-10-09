@@ -60,6 +60,8 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
         });
 
         map.addControl(new maplibregl.ScaleControl({ position: 'bottom-right' }));
+        map.addControl(new maplibregl.NavigationControl(), 'top-right');
+
     </script>
 
 </body>
