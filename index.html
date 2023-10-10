@@ -23,15 +23,37 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
             bottom: 0;
             width: 100%;
         }
+
+        .contour-switch {
+            position: absolute;
+            right: 8px;
+            top: 114px;
+            background: white;
+            width: 29px;
+            height: 29px;
+            text-align: center;
+            line-height: 29px;
+            border-radius: 5px;
+            border: 2px solid rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .contour-switch.active {
+            border: 2px solid rgba(0, 0, 0, 1);
+        }
     </style>
 </head>
 
 <body>
     <div id="map"></div>
 
+    <div class="contour-switch">C</div>
+
     <script type="module">
         import { layers } from './layers.mjs'
         import { sources } from './sources.mjs'
+        import { contour_layers } from './contour_layers.mjs'
 
         const style = {
             name: "Purely topographic map",
@@ -61,6 +83,26 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
 
         map.addControl(new maplibregl.ScaleControl({ position: 'bottom-right' }));
         map.addControl(new maplibregl.NavigationControl(), 'top-right');
+
+        let contours_shown = false
+        const orig_layers = [...layers]
+
+        document.querySelector('.contour-switch').addEventListener('click', e => {
+
+            contours_shown = !contours_shown
+            const layers = [...orig_layers]
+            if (contours_shown) {
+                layers.push(...contour_layers)
+                e.target.classList.add('active')
+            } else {
+                e.target.classList.remove('active')
+            }
+
+            map.setStyle(
+                { ...style, layers },
+                { diff: true }
+            )
+        })
 
     </script>
 
