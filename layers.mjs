@@ -10,7 +10,7 @@ export const layers = [
             "visibility": "visible"
         },
         "paint": {
-            "background-color": "hsl(60, 30%, 93%)"
+            "background-color": "hsl(0,0%,93%)"
         }
     },
     {
@@ -25,7 +25,7 @@ export const layers = [
         },
         "paint": {
             "fill-color": "hsl(0,0%,100%)",
-            "fill-opacity": 0.4,
+            "fill-opacity": 1,
             "fill-antialias": false
         },
         "metadata": {},
@@ -332,9 +332,9 @@ export const layers = [
             "visibility": "visible"
         },
         "paint": {
-            // "hillshade-accent-color": 'red',
-            "hillshade-shadow-color": 'hsl(14, 30%, 30%)',
-            "hillshade-highlight-color": 'hsl(56, 40%, 88%)',
+            // "hillshade-accent-color": "hsl(51, 30%, 79%)",
+            "hillshade-shadow-color": 'hsl(24, 20%, 60%)',
+            "hillshade-highlight-color": 'hsl(56, 30%, 88%)',
             'hillshade-exaggeration': [
                 "interpolate",
                 [
@@ -345,7 +345,7 @@ export const layers = [
                     "zoom"
                 ],
                 1,
-                1,
+                0.8,
                 16,
                 0.5
             ]

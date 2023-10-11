@@ -53,7 +53,7 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
     <script type="module">
         import { layers } from './layers.mjs'
         import { sources } from './sources.mjs'
-        import { contour_layers } from './contour_layers.mjs'
+        import { manage_contours } from './manage_contours.mjs'
 
         const style = {
             name: "Purely topographic map",
@@ -84,25 +84,8 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
         map.addControl(new maplibregl.ScaleControl({ position: 'bottom-right' }));
         map.addControl(new maplibregl.NavigationControl(), 'top-right');
 
-        let contours_shown = false
-        const orig_layers = [...layers]
-
-        document.querySelector('.contour-switch').addEventListener('click', e => {
-
-            contours_shown = !contours_shown
-            const layers = [...orig_layers]
-            if (contours_shown) {
-                layers.push(...contour_layers)
-                e.target.classList.add('active')
-            } else {
-                e.target.classList.remove('active')
-            }
-
-            map.setStyle(
-                { ...style, layers },
-                { diff: true }
-            )
-        })
+        
+        manage_contours(map, style)
 
     </script>
 
