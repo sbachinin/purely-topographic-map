@@ -23,11 +23,12 @@ export const manage_contours = (map, style) => {
         )
     }
     
-    contour_switch.addEventListener('click', e => {
-        contours_shown = !contours_shown
+    map.on("load", () => {
+        contour_switch.addEventListener('click', e => {
+            contours_shown = !contours_shown
+            update_contours()
+        })
         update_contours()
     })
-
-    update_contours()
 }
 
