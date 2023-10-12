@@ -1,4 +1,5 @@
-const road_hue = 320
+const city_label_color = "hsl(300, 45%, 35%)"
+
 const road_lum = '50%'
 const road_opa = '80%'
 
@@ -2920,11 +2921,11 @@ export const layers = [
                 "stops": [
                     [
                         9,
-                        13
+                        12
                     ],
                     [
                         12,
-                        15
+                        14
                     ],
                     [
                         16,
@@ -2955,9 +2956,9 @@ export const layers = [
         },
         "paint": {
             "text-color": "hsl(25, 87%, 0%)",
-            "text-halo-blur": 6,
-            "text-halo-color": "hsl(86, 20%, 84%)",
-            "text-halo-width": 3
+            "text-halo-blur": 0,
+            "text-halo-color": "hsl(0, 0%, 100%)",
+            "text-halo-width": 1.5
         },
         "filter": [
             "all",
@@ -2998,15 +2999,15 @@ export const layers = [
                 "stops": [
                     [
                         9,
-                        9
+                        12
                     ],
                     [
                         12,
-                        11
+                        14
                     ],
                     [
                         16,
-                        12
+                        16
                     ]
                 ]
             },
@@ -3034,10 +3035,10 @@ export const layers = [
             "text-radial-offset": 0
         },
         "paint": {
-            "text-color": "hsl(19,91%,45%)",
-            "text-halo-blur": 1,
+            "text-color": "hsl(19,91%,35%)",
+            "text-halo-blur": 0,
             "text-halo-color": "hsl(0,0%,100%)",
-            "text-halo-width": 1
+            "text-halo-width": 1.5
         },
         "filter": [
             "all",
@@ -3496,7 +3497,7 @@ export const layers = [
             "text-letter-spacing": 0
         },
         "paint": {
-            "text-color": "hsl(0,0%,40%)",
+            "text-color": city_label_color,
             "icon-opacity": 1,
             "text-opacity": 1,
             "text-halo-blur": 1,
@@ -3662,7 +3663,7 @@ export const layers = [
             "icon-allow-overlap": true
         },
         "paint": {
-            "text-color": "hsl(0,0%,40%)",
+            "text-color": city_label_color,
             "icon-opacity": [
                 "step",
                 [
@@ -3777,7 +3778,7 @@ export const layers = [
             "icon-allow-overlap": true
         },
         "paint": {
-            "text-color": "hsl(0,0%,30%)",
+            "text-color": city_label_color,
             "text-halo-color": "#E3F4EB",
             "text-halo-width": 1
         },
