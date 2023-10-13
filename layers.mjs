@@ -1,7 +1,7 @@
 import { transport_layers } from './transport_layers.mjs'
 
 const city_label_color = "hsl(300, 45%, 35%)"
-const water_color = 'hsl(199,24%,59%)'
+const water_color = 'hsl(199,44%,59%)'
 const ocean_label_color = "hsl(206, 0%, 30%)"
 
 
