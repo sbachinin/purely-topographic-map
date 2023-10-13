@@ -1,6 +1,7 @@
 import { transport_layers } from './transport_layers.mjs'
 
 const city_label_color = "hsl(300, 45%, 35%)"
+const water_color = 'hsl(199,24%,59%)'
 
 export const layers = [
 
@@ -368,7 +369,7 @@ export const layers = [
             "visibility": "visible"
         },
         "paint": {
-            "line-color": "hsl(199, 44%, 59%)",
+            "line-color": water_color,
             "line-width": {
                 "base": 1.3,
                 "stops": [
@@ -406,7 +407,7 @@ export const layers = [
             "visibility": "visible"
         },
         "paint": {
-            "line-color": "hsl(199, 44%, 59%)",
+            "line-color": water_color,
             "line-width": {
                 "base": 1.2,
                 "stops": [
@@ -455,7 +456,7 @@ export const layers = [
                 "stops": [
                     [
                         6,
-                        "hsl(199, 44%, 59%)"
+                        water_color
                     ],
                     [
                         8,
@@ -463,7 +464,7 @@ export const layers = [
                     ],
                     [
                         9,
-                        "hsl(199, 44%, 59%)"
+                        water_color
                     ]
                 ]
             },
@@ -515,7 +516,7 @@ export const layers = [
             "visibility": "visible"
         },
         "paint": {
-            "line-color": "hsl(199, 44%, 59%)",
+            "line-color": water_color,
             "line-width": {
                 "base": 1.3,
                 "stops": [
@@ -584,7 +585,7 @@ export const layers = [
             "visibility": "visible"
         },
         "paint": {
-            "line-color": "hsl(199, 44%, 59%)",
+            "line-color": water_color,
             "line-width": {
                 "base": 1.3,
                 "stops": [
@@ -632,7 +633,7 @@ export const layers = [
             "visibility": "visible"
         },
         "paint": {
-            "fill-color": "hsl(199,44%,59%)"
+            "fill-color": water_color
         },
         "metadata": {},
         "filter": [
