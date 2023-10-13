@@ -1239,14 +1239,8 @@ export const transport_layers = [
                     [
                         "tertiary"
                     ],
-                    6,
-                    [
-                        "minor",
-                        "service",
-                        "track"
-                    ],
-                    3,
-                    3
+                    3.5,
+                    2
                 ],
                 20,
                 [
@@ -1258,14 +1252,8 @@ export const transport_layers = [
                     [
                         "tertiary"
                     ],
-                    24,
-                    [
-                        "minor",
-                        "service",
-                        "track"
-                    ],
-                    12,
-                    12
+                    8,
+                    6
                 ]
             ]
         },
@@ -1375,67 +1363,11 @@ export const transport_layers = [
                     1
                 ],
                 12,
-                [
-                    "match",
-                    [
-                        "get",
-                        "class"
-                    ],
-                    [
-                        "trunk"
-                    ],
-                    2.5,
-                    [
-                        "primary"
-                    ],
-                    2.5,
-                    1.5
-                ],
-                14,
-                [
-                    "match",
-                    [
-                        "get",
-                        "class"
-                    ],
-                    [
-                        "trunk"
-                    ],
-                    3,
-                    [
-                        "primary"
-                    ],
-                    5,
-                    4
-                ],
+                2.5,
                 16,
-                [
-                    "match",
-                    [
-                        "get",
-                        "class"
-                    ],
-                    [
-                        "trunk",
-                        "primary"
-                    ],
-                    4,
-                    4
-                ],
+                4,
                 20,
-                [
-                    "match",
-                    [
-                        "get",
-                        "class"
-                    ],
-                    [
-                        "trunk",
-                        "primary"
-                    ],
-                    24,
-                    24
-                ]
+                10
             ]
         },
         "metadata": {},
@@ -1638,28 +1570,17 @@ export const transport_layers = [
             "visibility": "visible"
         },
         "paint": {
-            "line-color": {
-                "stops": [
-                    [
-                        6,
-                        "hsl(0, 0%, 60%)"
-                    ],
-                    [
-                        18,
-                        "hsl(0, 0%, 51%)"
-                    ]
-                ]
-            },
+            "line-color": road_color,
             "line-width": {
                 "base": 1.2,
                 "stops": [
                     [
                         14,
-                        0.5
+                        1
                     ],
                     [
                         22,
-                        3
+                        4
                     ]
                 ]
             },
