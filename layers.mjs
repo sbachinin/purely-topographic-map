@@ -2,6 +2,8 @@ import { transport_layers } from './transport_layers.mjs'
 
 const city_label_color = "hsl(300, 45%, 35%)"
 const water_color = 'hsl(199,24%,59%)'
+const ocean_label_color = "hsl(206, 0%, 30%)"
+
 
 export const layers = [
 
@@ -814,10 +816,9 @@ export const layers = [
             "text-rotation-alignment": "map"
         },
         "paint": {
-            "text-color": "hsl(213, 56%, 32%)",
-            "text-halo-blur": 0.5,
-            "text-halo-color": "hsla(197, 87%, 88%, 0.6)",
-            "text-halo-width": 1
+            "text-color": "hsl(213, 56%, 100%)",
+            "text-halo-color": water_color,
+            "text-halo-width": 2
         },
         "filter": [
             "has",
@@ -842,9 +843,7 @@ export const layers = [
             "symbol-placement": "line"
         },
         "paint": {
-            "text-color": "hsl(200, 88%, 26%)",
-            "text-halo-color": "hsla(0, 0%, 100%, 0.45)",
-            "text-halo-width": 1.5
+            "text-color": ocean_label_color
         },
         "metadata": {},
         "filter": [
@@ -892,22 +891,7 @@ export const layers = [
             "symbol-placement": "point"
         },
         "paint": {
-            "text-color": {
-                "stops": [
-                    [
-                        1,
-                        "hsl(206, 0%, 40%)"
-                    ],
-                    [
-                        4,
-                        "hsl(201, 0%, 34%)"
-                    ],
-                    [
-                        6,
-                        "hsl(207, 0%, 28%)"
-                    ]
-                ]
-            },
+            "text-color": ocean_label_color,
             "text-opacity": 1,
         },
         "metadata": {},
@@ -946,13 +930,13 @@ export const layers = [
                     "zoom"
                 ],
                 1,
-                10,
+                12,
                 3,
-                13,
+                15,
                 9,
-                17,
+                19,
                 14,
-                20
+                22
             ],
             "text-field": "{name:latin}",
             "visibility": "visible",
@@ -961,37 +945,22 @@ export const layers = [
             "symbol-placement": "point"
         },
         "paint": {
-            "text-color": {
-                "stops": [
-                    [
-                        1,
-                        "hsl(206, 30%, 40%)"
-                    ],
-                    [
-                        4,
-                        "hsl(201, 28%, 34%)"
-                    ],
-                    [
-                        6,
-                        "hsl(207, 31%, 28%)"
-                    ]
-                ]
-            },
+            "text-color": ocean_label_color,
             "text-opacity": 1,
-            "text-halo-blur": 1,
-            "text-halo-color": {
-                "stops": [
-                    [
-                        1,
-                        "hsla(200,72%,70%,0.05)"
-                    ],
-                    [
-                        3,
-                        "hsla(200,72%,70%,0.5)"
-                    ]
-                ]
-            },
-            "text-halo-width": 1
+            // "text-halo-blur": 1,
+            // "text-halo-color": {
+            //     "stops": [
+            //         [
+            //             1,
+            //             "hsla(200,72%,70%,0.05)"
+            //         ],
+            //         [
+            //             3,
+            //             "hsla(200,72%,70%,0.5)"
+            //         ]
+            //     ]
+            // },
+            // "text-halo-width": 1
         },
         "metadata": {},
         "filter": [
@@ -1024,9 +993,7 @@ export const layers = [
             "text-max-width": 5
         },
         "paint": {
-            "text-color": "hsl(200, 88%, 26%)",
-            "text-halo-color": "hsla(0, 0%, 100%, 0.45)",
-            "text-halo-width": 1.5
+            "text-color": ocean_label_color
         },
         "metadata": {},
         "filter": [
