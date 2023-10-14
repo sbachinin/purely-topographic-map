@@ -1322,13 +1322,13 @@ export const layers = [
             ]
         ]
     },
-    /* 
+    
     {
         "id": "Place labels",
         "type": "symbol",
         "source": "maptiler_planet",
         "source-layer": "place",
-        "minzoom": 4,
+        "minzoom": 13,
         "layout": {
             "icon-size": {
                 "stops": [
@@ -1359,10 +1359,6 @@ export const layers = [
                 [
                     "zoom"
                 ],
-                3,
-                11,
-                8,
-                13,
                 11,
                 [
                     "match",
@@ -1460,39 +1456,6 @@ export const layers = [
         "paint": {
             "text-color": "hsl(0,0%,20%)",
             "icon-opacity": 1,
-            "text-opacity": [
-                "step",
-                [
-                    "zoom"
-                ],
-                1,
-                8,
-                [
-                    "match",
-                    [
-                        "get",
-                        "class"
-                    ],
-                    [
-                        "island"
-                    ],
-                    0,
-                    1
-                ],
-                9,
-                [
-                    "match",
-                    [
-                        "get",
-                        "class"
-                    ],
-                    [
-                        "island"
-                    ],
-                    1,
-                    1
-                ]
-            ],
             "text-halo-blur": [
                 "match",
                 [
@@ -1544,7 +1507,7 @@ export const layers = [
             ]
         ]
     },
-    */
+    
     {
         "id": "Village labels",
         "type": "symbol",
