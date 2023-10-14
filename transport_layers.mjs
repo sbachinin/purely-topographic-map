@@ -515,7 +515,7 @@ export const transport_layers = [
         "type": "line",
         "source": "maptiler_planet",
         "source-layer": "transportation",
-        "minzoom": 13,
+        "minzoom": 12,
         "maxzoom": 24,
         "layout": {
             "line-cap": "butt",
@@ -535,7 +535,7 @@ export const transport_layers = [
                 ],
 
 
-                13,
+                12,
                 [
                     "match",
                     [
@@ -762,31 +762,9 @@ export const transport_layers = [
                             "bridge"
                         ],
                         0,
-                        3
+                        2.5
                     ],
                     0
-                ],
-                10,
-                [
-                    "match",
-                    [
-                        "get",
-                        "class"
-                    ],
-                    [
-                        "motorway"
-                    ],
-                    [
-                        "match",
-                        [
-                            "get",
-                            "ramp"
-                        ],
-                        2,
-                        0,
-                        3.2
-                    ],
-                    2
                 ],
                 12,
                 [
@@ -820,16 +798,7 @@ export const transport_layers = [
                     [
                         "motorway"
                     ],
-                    [
-                        "match",
-                        [
-                            "get",
-                            "ramp"
-                        ],
-                        2,
-                        5,
-                        6
-                    ],
+                    4,
                     2
                 ],
                 16,
@@ -842,8 +811,8 @@ export const transport_layers = [
                     [
                         "motorway"
                     ],
-                    8,
-                    2.4
+                    5,
+                    1.4
                 ],
                 20,
                 [
@@ -855,8 +824,8 @@ export const transport_layers = [
                     [
                         "motorway"
                     ],
-                    24,
-                    16
+                    14,
+                    9
                 ]
             ],
             "line-opacity": 1
