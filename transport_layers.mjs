@@ -1,5 +1,5 @@
 const road_color = "hsl(267, 83%, 72%)"
-
+const railway_color = "hsl(30, 57%, 69%)"
 import { brunnels } from './brunnels.mjs'
 
 export const transport_layers = [
@@ -944,25 +944,24 @@ export const transport_layers = [
             "visibility": "visible"
         },
         "paint": {
-            "line-color": "hsl(30,70%,72%)",
+            "line-color": railway_color,
             "line-width": {
                 "base": 2.8,
                 "stops": [
                     [
                         14,
-                        4.8
+                        3
                     ],
                     [
                         15,
-                        10
+                        6
                     ],
                     [
                         20,
-                        16
+                        10
                     ]
                 ]
             },
-            "line-opacity": 0.5
         },
         "metadata": {},
         "filter": [
@@ -988,7 +987,7 @@ export const transport_layers = [
             "visibility": "visible"
         },
         "paint": {
-            "line-color": "hsl(0,0%,72%)",
+            "line-color": railway_color,
             "line-width": {
                 "base": 1.4,
                 "stops": [
@@ -1006,16 +1005,6 @@ export const transport_layers = [
                     ]
                 ]
             },
-            "line-opacity": [
-                "match",
-                [
-                    "get",
-                    "service"
-                ],
-                "yard",
-                0.5,
-                1
-            ],
             "line-dasharray": [
                 0.2,
                 9
@@ -1045,7 +1034,7 @@ export const transport_layers = [
             "visibility": "visible"
         },
         "paint": {
-            "line-color": "hsl(0,0%,73%)",
+            "line-color": railway_color,
             "line-width": {
                 "base": 1.4,
                 "stops": [
