@@ -42,6 +42,60 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
         .contour-switch.active {
             border: 2px solid rgba(0, 0, 0, 1);
         }
+
+        .fullwidth-scale-wrapper {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            border: 2px solid #333;
+            border-top: #333;
+            box-sizing: border-box;
+            color: #333;
+            display: none;
+            font-size: 12px;
+            font-family: Helvetica Neue, Arial, Helvetica, sans-serif;
+        }
+
+        .fullwidth-scale {
+            display: flex;
+            width: max-content;
+        }
+
+        .fullwidth-scale>div {
+            height: 10px;
+            width: var(--scale-step-width);
+            border-right: 2px solid #333;
+        }
+
+        .maplibregl-ctrl.maplibregl-ctrl-scale {
+            margin-left: -1000px;
+        }
+
+        .maplibregl-ctrl-attrib {
+            position: fixed;
+            bottom: 50px;
+            right: 10px;
+            transform: scale(-1) translate(0);
+            writing-mode: vertical-lr;
+            padding: 8px 0px !important;
+            font-family: monospace;
+            font-size: 14px;
+        }
+
+        .scale-item {
+            position: relative;
+        }
+
+        .scale-item-label {
+            position: absolute;
+            right: 0;
+            bottom: 100%;
+            width: 0;
+            display: flex;
+            justify-content: center;
+            white-space: nowrap;
+        }
     </style>
 </head>
 
@@ -50,10 +104,16 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
 
     <div class="contour-switch">C</div>
 
+    <div class="fullwidth-scale-wrapper">
+        <div class="fullwidth-scale"></div>
+    </div>
+
+
     <script type="module">
         import { layers } from './layers.mjs'
         import { sources } from './sources.mjs'
         import { manage_contours } from './manage_contours.mjs'
+        import { manage_scale } from './manage_scale.mjs'
 
         const style = {
             name: "Purely topographic map",
@@ -81,11 +141,14 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
             antialias: true,
         });
 
-        map.addControl(new maplibregl.ScaleControl({ position: 'bottom-right' }));
+        map.addControl(new maplibregl.ScaleControl());
         map.addControl(new maplibregl.NavigationControl(), 'top-right');
 
-        
+
         manage_contours(map, style)
+
+        manage_scale()
+
 
     </script>
 
