@@ -6,26 +6,22 @@ const possible_steps = [
 
 const scale_item_labels = []
 
-const MAX_SCALE_ITEM_WIDTH = 200
 const MIN_SCALE_ITEM_WIDTH = 80
 const MAX_SCALE_ITEMS_COUNT = 15
-const items_viewport_limit = Math.ceil(window.innerWidth / MIN_SCALE_ITEM_WIDTH)
+
+const fullwidth_scale_wr = document.querySelector('.fullwidth-scale-wrapper')
+const fullwidth_scale_width = fullwidth_scale_wr.getBoundingClientRect().width // TODO needs update on resize
+const items_viewport_limit = Math.ceil(fullwidth_scale_width / MIN_SCALE_ITEM_WIDTH)
 const max_scale_items_count = Math.min(items_viewport_limit, MAX_SCALE_ITEMS_COUNT)
 
-const update_scale = (fullwidth_scale_width, native_scale_el) => {
+const update_scale = (native_scale_el) => {
 
     // 1. set width
     const ratio = fullwidth_scale_width / (parseFloat(native_scale_el.style.width) - 4) // 4 is 2 borders
     const native_scale_value = parseInt(native_scale_el.innerText, 10)
     const fullwidth_scale_value = native_scale_value * ratio
-
-    // For performance sake, max_scale_items_count takes precedence:
-    // if screen is very wide, items will be wider than MAX_SCALE_ITEM_WIDTH
-    const max_items_count = Math.max(
-        fullwidth_scale_width / MAX_SCALE_ITEM_WIDTH,
-        max_scale_items_count
-    )
-    const min_step_value = fullwidth_scale_value / max_items_count
+    
+    const min_step_value = fullwidth_scale_value / max_scale_items_count
 
     let step_value = possible_steps.find(s => s > min_step_value)
 
@@ -75,18 +71,14 @@ export const manage_scale = () => {
     const native_scale_el = document.querySelector('.maplibregl-ctrl.maplibregl-ctrl-scale')
     if (native_scale_el === null) return
 
-    const fullwidth_scale_wr = document.querySelector('.fullwidth-scale-wrapper')
-
-    fullwidth_scale_wr.style.display = 'block'
-    const fullwidth_scale_width = fullwidth_scale_wr.getBoundingClientRect().width
-
+    fullwidth_scale_wr.style.visibility = 'visible'
     for (let i = 0; i < max_scale_items_count; i++) {
         fullwidth_scale_wr.firstElementChild.appendChild(create_scale_item(i))
     }
     
-    update_scale(fullwidth_scale_width, native_scale_el)
+    update_scale(native_scale_el)
 
-    const observer = new MutationObserver(() => update_scale(fullwidth_scale_width, native_scale_el))
+    const observer = new MutationObserver(() => update_scale(native_scale_el))
     observer.observe(
         native_scale_el,
         { attributes: true, childList: true, subtree: true }
