@@ -26,21 +26,27 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
 
         .contour-switch {
             position: absolute;
-            right: 8px;
+            right: 10px;
             top: 114px;
             background: white;
             width: 29px;
             height: 29px;
             text-align: center;
             line-height: 29px;
-            border-radius: 5px;
-            border: 2px solid rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+            box-shadow: 0 0 0 2px rgba(0,0,0,.1);
             cursor: pointer;
             user-select: none;
+            overflow: hidden;
         }
 
         .contour-switch.active {
-            border: 2px solid rgba(0, 0, 0, 1);
+            box-shadow: 0 0 0 2px rgba(0,0,0,.3);
+        }
+
+        .contour-switch img {
+            width: 100%;
+            height: 100%;
         }
 
         .fullwidth-scale-wrapper {
@@ -107,7 +113,7 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
 <body>
     <div id="map"></div>
 
-    <div class="contour-switch">C</div>
+    <div class="contour-switch"><img src="./contours_icon.jpg"></div>
 
     <div class="fullwidth-scale-wrapper">
         <div class="fullwidth-scale"></div>
