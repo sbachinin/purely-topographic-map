@@ -67,10 +67,30 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
             height: 5px;
             width: var(--scale-step-width);
             border-right: 2px solid #333;
+            box-sizing: border-box;
         }
 
         .maplibregl-ctrl.maplibregl-ctrl-scale {
-            margin-left: -1000px;
+            /* margin-left: -1000px; */
+            margin-bottom: 50px;
+        }
+
+        .scale-item {
+            position: relative;
+        }
+
+        .scale-item.hidden {
+            visibility: hidden;
+        }
+
+        .scale-item-label {
+            position: absolute;
+            right: 0;
+            bottom: 100%;
+            width: 0;
+            display: flex;
+            justify-content: center;
+            white-space: nowrap;
         }
 
         .maplibregl-ctrl-attrib {
@@ -82,20 +102,6 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
             padding: 8px 0px !important;
             font-family: monospace;
             font-size: 14px;
-        }
-
-        .scale-item {
-            position: relative;
-        }
-
-        .scale-item-label {
-            position: absolute;
-            right: 0;
-            bottom: 100%;
-            width: 0;
-            display: flex;
-            justify-content: center;
-            white-space: nowrap;
         }
     </style>
 </head>

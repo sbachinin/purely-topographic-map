@@ -10,14 +10,15 @@ const MIN_SCALE_ITEM_WIDTH = 80
 const MAX_SCALE_ITEMS_COUNT = 15
 
 const fullwidth_scale_wr = document.querySelector('.fullwidth-scale-wrapper')
-const fullwidth_scale_width = fullwidth_scale_wr.getBoundingClientRect().width // TODO needs update on resize
+// TODO needs update on resize
+const fullwidth_scale_width = fullwidth_scale_wr.clientWidth // clientWidth doesn't include padding, it's important for precision
 const items_viewport_limit = Math.ceil(fullwidth_scale_width / MIN_SCALE_ITEM_WIDTH)
 const max_scale_items_count = Math.min(items_viewport_limit, MAX_SCALE_ITEMS_COUNT)
 
 const update_scale = (native_scale_el) => {
 
     // 1. set width
-    const ratio = fullwidth_scale_width / (parseFloat(native_scale_el.style.width) - 4) // 4 is 2 borders
+    const ratio = fullwidth_scale_width / (parseFloat(native_scale_el.style.width))
     const native_scale_value = parseInt(native_scale_el.innerText, 10)
     const fullwidth_scale_value = native_scale_value * ratio
     
@@ -25,13 +26,13 @@ const update_scale = (native_scale_el) => {
 
     let step_value = possible_steps.find(s => s > min_step_value)
 
-    const step_count = fullwidth_scale_value / step_value
-    const step_width = fullwidth_scale_width / step_count
+    const visible_steps_count = fullwidth_scale_value / step_value
+    const step_width = fullwidth_scale_width / visible_steps_count
 
     root.style.setProperty('--scale-step-width', step_width + 'px')
 
 
-    // 2. set labels
+    // 2. set labels & hide what's far on the right
     let scale_units = native_scale_el.innerText.match(/[A-Za-z]+$/)[0]
     
     // prevent change from '1000m' to '1km', use only '1km'
@@ -41,7 +42,22 @@ const update_scale = (native_scale_el) => {
     }
 
     scale_item_labels.forEach((l, i) => {
-        let text = step_value * (i + 1)
+        const value = step_value * (i + 1)
+ 
+        if (i >= (visible_steps_count - 1)) {
+            l.parentElement.classList.add('hidden')
+            return
+        }
+        
+        l.parentElement.classList.remove('hidden')
+
+        if (i >= (visible_steps_count - 1.2)) {
+            // don't draw label too close to the right border
+            l.innerText = ''
+            return
+        }
+
+        let text = String(value)
         if (i === 0) {
             text += ' ' + scale_units
         }
