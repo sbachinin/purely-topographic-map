@@ -7,7 +7,7 @@ const ocean_label_color = "hsl(206, 0%, 30%)"
 
 export const layers = [
 
-    
+
     {
         "id": "Background",
         "type": "background",
@@ -18,7 +18,6 @@ export const layers = [
             "background-color": "hsl(0,0%,93%)"
         }
     },
-    ...transport_layers,
     {
         "id": "Glacier",
         "type": "fill",
@@ -357,9 +356,9 @@ export const layers = [
             ]
         }
     },
-    
-    
-    
+
+
+
     {
         "id": "River tunnel",
         "type": "line",
@@ -790,7 +789,7 @@ export const layers = [
         "type": "symbol",
         "source": "maptiler_planet",
         "source-layer": "waterway",
-        "minzoom": 13,
+        "minzoom": 0,
         "layout": {
             "text-font": [
                 "Noto Sans Italic"
@@ -799,11 +798,11 @@ export const layers = [
                 "stops": [
                     [
                         13,
-                        10
+                        12
                     ],
                     [
                         16,
-                        14
+                        16
                     ]
                 ]
             },
@@ -816,9 +815,13 @@ export const layers = [
             "text-rotation-alignment": "map"
         },
         "paint": {
-            "text-color": "hsl(213, 56%, 100%)",
-            "text-halo-color": water_color,
-            "text-halo-width": 2
+            // "text-color": "hsl(213, 56%, 100%)",
+            // "text-halo-color": water_color,
+            // "text-halo-width": 2
+            "text-color": "hsl(213, 56%, 22%)",
+            "text-halo-blur": 0.5,
+            "text-halo-color": "hsla(197, 87%, 88%, 0.6)",
+            "text-halo-width": 1
         },
         "filter": [
             "has",
@@ -1010,6 +1013,14 @@ export const layers = [
             ]
         ]
     },
+
+
+
+
+    ...transport_layers,
+
+
+
     {
         "id": "Peak labels",
         "type": "symbol",
@@ -1088,7 +1099,7 @@ export const layers = [
             ]
         ]
     },
-    
+
     {
         "id": "Peak labels (US)",
         "type": "symbol",
@@ -1325,7 +1336,7 @@ export const layers = [
             ]
         ]
     },
-    
+
     {
         "id": "Place labels",
         "type": "symbol",
@@ -1510,7 +1521,7 @@ export const layers = [
             ]
         ]
     },
-    
+
     {
         "id": "Village labels",
         "type": "symbol",
