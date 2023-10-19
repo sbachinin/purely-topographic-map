@@ -1088,86 +1088,7 @@ export const layers = [
             ]
         ]
     },
-    {
-        "id": "Volcano labels",
-        "type": "symbol",
-        "source": "maptiler_planet",
-        "source-layer": "mountain_peak",
-        "minzoom": 9,
-        "maxzoom": 24,
-        "layout": {
-            "icon-size": 1,
-            "text-font": [
-                "Noto Sans Regular"
-            ],
-            "text-size": {
-                "stops": [
-                    [
-                        9,
-                        12
-                    ],
-                    [
-                        12,
-                        14
-                    ],
-                    [
-                        16,
-                        16
-                    ]
-                ]
-            },
-            "text-field": "{name:latin}\n{ele}m\n▲",
-            "visibility": "visible",
-            "text-anchor": "bottom",
-            "text-offset": [
-                0,
-                0.5
-            ],
-            "text-rotate": 0,
-            "text-max-width": {
-                "stops": [
-                    [
-                        6,
-                        8
-                    ],
-                    [
-                        10,
-                        8
-                    ]
-                ]
-            },
-            "text-line-height": 1,
-            "text-radial-offset": 0
-        },
-        "paint": {
-            "text-color": "hsl(19,91%,35%)",
-            "text-halo-blur": 0,
-            "text-halo-color": "hsl(0,0%,100%)",
-            "text-halo-width": 1.5
-        },
-        "filter": [
-            "all",
-            [
-                "==",
-                "$type",
-                "Point"
-            ],
-            [
-                "==",
-                "rank",
-                1
-            ],
-            [
-                "in",
-                "class",
-                "volcano"
-            ],
-            [
-                "!has",
-                "customary_ft"
-            ]
-        ]
-    },
+    
     {
         "id": "Peak labels (US)",
         "type": "symbol",
@@ -1245,6 +1166,88 @@ export const layers = [
             ]
         ]
     },
+
+    {
+        "id": "Volcano labels",
+        "type": "symbol",
+        "source": "maptiler_planet",
+        "source-layer": "mountain_peak",
+        "minzoom": 0,
+        "maxzoom": 24,
+        "layout": {
+            "icon-size": 1,
+            "text-font": [
+                "Noto Sans Regular"
+            ],
+            "text-size": {
+                "stops": [
+                    [
+                        9,
+                        12
+                    ],
+                    [
+                        12,
+                        14
+                    ],
+                    [
+                        16,
+                        16
+                    ]
+                ]
+            },
+            "text-field": "{name:latin}\n{ele}m\n▲",
+            "visibility": "visible",
+            "text-anchor": "bottom",
+            "text-offset": [
+                0,
+                0.5
+            ],
+            "text-rotate": 0,
+            "text-max-width": {
+                "stops": [
+                    [
+                        6,
+                        8
+                    ],
+                    [
+                        10,
+                        8
+                    ]
+                ]
+            },
+            "text-line-height": 1,
+            "text-radial-offset": 0
+        },
+        "paint": {
+            "text-color": "hsl(19,91%,35%)",
+            "text-halo-blur": 0,
+            "text-halo-color": "hsl(0,0%,100%)",
+            "text-halo-width": 1.5
+        },
+        "filter": [
+            "all",
+            [
+                "==",
+                "$type",
+                "Point"
+            ],
+            [
+                "==",
+                "rank",
+                1
+            ],
+            [
+                "in",
+                "class",
+                "volcano"
+            ],
+            [
+                "!has",
+                "customary_ft"
+            ]
+        ]
+    },
+
     {
         "id": "Volcano labels (US)",
         "type": "symbol",
