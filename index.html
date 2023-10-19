@@ -129,9 +129,10 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
     <script type="module">
         import { layers } from './layers.mjs'
         import { sources } from './sources.mjs'
-        import { manage_contours } from './manage_contours.mjs'
-        import { manage_countries } from './manage_countries.mjs'
+        import { get_switch } from './switch_layers_button.mjs'
         import { manage_scale } from './manage_scale.mjs'
+        import { contour_layers } from './contour_layers.mjs'
+        import { countries_layers } from './countries_layers.mjs'
 
         const style = {
             name: "Purely topographic map",
@@ -163,13 +164,10 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
         map.addControl(new maplibregl.NavigationControl(), 'top-right');
 
 
-        manage_contours(map, style)
-
         manage_scale()
 
-        manage_countries(map, style)
-
-
+        get_switch(map, contour_layers, true, '.contour-switch')
+        get_switch(map, countries_layers, false, '.countries-switch')
     </script>
 
 </body>

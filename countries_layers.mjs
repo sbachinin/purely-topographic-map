@@ -1,4 +1,192 @@
-export const country_layers = [
+export const countries_layers = [
+
+    {
+        "id": "State labels",
+        "type": "symbol",
+        "source": "maptiler_planet",
+        "source-layer": "place",
+        "minzoom": 3,
+        "maxzoom": 9,
+        "layout": {
+            "text-font": [
+                "Roboto Medium",
+                "Noto Sans Regular"
+            ],
+            "text-size": {
+                "stops": [
+                    [
+                        3,
+                        7
+                    ],
+                    [
+                        5,
+                        8
+                    ],
+                    [
+                        6,
+                        11
+                    ]
+                ]
+            },
+            "text-field": [
+                "coalesce",
+                [
+                    "get",
+                    "name:en"
+                ],
+                [
+                    "get",
+                    "name"
+                ]
+            ],
+            "visibility": "visible",
+            "text-padding": 2,
+            "text-max-width": 8,
+            "text-transform": "uppercase",
+            "text-letter-spacing": 0.1
+        },
+        "paint": {
+            "text-color": "hsl(51,4%,36%)",
+            "text-opacity": [
+                "step",
+                [
+                    "zoom"
+                ],
+                0,
+                3,
+                [
+                    "case",
+                    [
+                        "<=",
+                        [
+                            "get",
+                            "rank"
+                        ],
+                        1
+                    ],
+                    1,
+                    0
+                ],
+                5,
+                [
+                    "case",
+                    [
+                        "<=",
+                        [
+                            "get",
+                            "rank"
+                        ],
+                        3
+                    ],
+                    1,
+                    0
+                ],
+                8,
+                [
+                    "case",
+                    [
+                        "==",
+                        [
+                            "get",
+                            "rank"
+                        ],
+                        0
+                    ],
+                    0,
+                    1
+                ]
+            ],
+            "text-halo-blur": 1,
+            "text-halo-color": "hsla(0,0%,100%,0.75)",
+            "text-halo-width": {
+                "stops": [
+                    [
+                        3,
+                        0.6
+                    ],
+                    [
+                        8,
+                        1
+                    ]
+                ]
+            }
+        },
+        "metadata": {},
+        "filter": [
+            "all",
+            [
+                "in",
+                "class",
+                "state",
+                "province"
+            ],
+            [
+                "<=",
+                "rank",
+                6
+            ]
+        ]
+    },
+
+    {
+        "id": "Other border",
+        "type": "line",
+        "source": "maptiler_planet",
+        "source-layer": "boundary",
+        "minzoom": 3,
+        "maxzoom": 22,
+        "layout": {
+            "visibility": "visible"
+        },
+        "paint": {
+            "line-color": "hsl(120, 35%, 45%)",
+            "line-width": {
+                "stops": [
+                    [
+                        3,
+                        0.75
+                    ],
+                    [
+                        4,
+                        1.25
+                    ],
+                    [
+                        11,
+                        1.75
+                    ],
+                    [
+                        18,
+                        2
+                    ]
+                ]
+            },
+            "line-dasharray": [
+                2,
+                1
+            ]
+        },
+        "filter": [
+            "all",
+            [
+                "in",
+                "admin_level",
+                3,
+                4,
+                // 5,
+                // 6,
+                // 7,
+                // 8,
+                // 9,
+                // 10
+            ],
+            [
+                "==",
+                "maritime",
+                0
+            ]
+        ]
+    },
+
     {
         "id": "Disputed border",
         "type": "line",
