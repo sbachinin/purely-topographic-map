@@ -24,15 +24,12 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
             width: 100%;
         }
 
-        .contour-switch {
+        .my-button {
             position: absolute;
             right: 10px;
-            top: 114px;
             background: white;
             width: 29px;
             height: 29px;
-            text-align: center;
-            line-height: 29px;
             border-radius: 4px;
             box-shadow: 0 0 0 2px rgba(0,0,0,.1);
             cursor: pointer;
@@ -40,13 +37,21 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
             overflow: hidden;
         }
 
-        .contour-switch.active {
+        .my-button.active {
             box-shadow: 0 0 0 2px rgba(0,0,0,.3);
         }
 
-        .contour-switch img {
+        .my-button img {
             width: 100%;
             height: 100%;
+        }
+
+        .contour-switch {
+            top: 114px;
+        }
+
+        .countries-switch {
+            top: 159px;
         }
 
         .fullwidth-scale-wrapper {
@@ -113,7 +118,8 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
 <body>
     <div id="map"></div>
 
-    <div class="contour-switch"><img src="./contours_icon.jpg"></div>
+    <div class="my-button contour-switch"><img src="./contours_icon.jpg"></div>
+    <div class="my-button countries-switch"><img src="./countries_icon.jpg"></div>
 
     <div class="fullwidth-scale-wrapper">
         <div class="fullwidth-scale"></div>
@@ -124,6 +130,7 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
         import { layers } from './layers.mjs'
         import { sources } from './sources.mjs'
         import { manage_contours } from './manage_contours.mjs'
+        import { manage_countries } from './manage_countries.mjs'
         import { manage_scale } from './manage_scale.mjs'
 
         const style = {
@@ -159,6 +166,8 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
         manage_contours(map, style)
 
         manage_scale()
+
+        manage_countries(map, style)
 
 
     </script>
