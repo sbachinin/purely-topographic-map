@@ -627,7 +627,7 @@ export const transport_layers = [
         "type": "line",
         "source": "maptiler_planet",
         "source-layer": "transportation",
-        "minzoom": 7,
+        "minzoom": 6,
         "maxzoom": 24,
         "layout": {
             "line-cap": "butt",
@@ -645,7 +645,7 @@ export const transport_layers = [
                 [
                     "zoom"
                 ],
-                7,
+                6,
                 [
                     // if trunk, 1
                     // if primary, 0.5
@@ -658,7 +658,7 @@ export const transport_layers = [
                     [
                         "trunk"
                     ],
-                    0.8,
+                    0.7,
                     [
                         "match",
                         [
@@ -668,7 +668,7 @@ export const transport_layers = [
                         [
                             "primary"
                         ],
-                        0.4,
+                        0.35,
                         0
                     ]
 
@@ -725,7 +725,7 @@ export const transport_layers = [
         "type": "line",
         "source": "maptiler_planet",
         "source-layer": "transportation",
-        "minzoom": 7,
+        "minzoom": 6,
         "layout": {
             "line-cap": "round",
             "line-join": "round",
@@ -742,7 +742,7 @@ export const transport_layers = [
                 [
                     "zoom"
                 ],
-                7,
+                6,
                 [
                     "match",
                     [
@@ -762,7 +762,7 @@ export const transport_layers = [
                             "bridge"
                         ],
                         0,
-                        1.2
+                        1.1
                     ],
                     0
                 ],
