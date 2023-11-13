@@ -1564,7 +1564,7 @@ export const get_actual_layers = () => {
             "type": "symbol",
             "source": "maptiler_planet",
             "source-layer": "place",
-            "minzoom": 13,
+            "minzoom": 12.3,
             "maxzoom": 24,
             "layout": {
                 "icon-size": {
