@@ -264,6 +264,10 @@ export const brunnels = [
                 "base": 2.8,
                 "stops": [
                     [
+                        8,
+                        2
+                    ],
+                    [
                         14,
                         4
                     ],
