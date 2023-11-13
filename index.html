@@ -134,7 +134,7 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
 
 
     <script type="module">
-        import { layers } from './layers.mjs'
+        import { get_actual_layers } from './layers.mjs'
         import { sources } from './sources.mjs'
         import { get_switch } from './switch_layers_button.mjs'
         import { manage_scale } from './manage_scale.mjs'
@@ -148,7 +148,7 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
             glyphs: "https://api.maptiler.com/fonts/{fontstack}/{range}.pbf?key=9C8cs9qKiCW3wSWdeUrN",
             sprite: "https://api.maptiler.com/maps/topo-v2/sprite",
 
-            layers,
+            layers: get_actual_layers(),
             sources,
 
             light: {
@@ -174,9 +174,9 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
 
         manage_scale()
 
-        get_switch(map, contour_layers, true, '.contour-switch')
-        get_switch(map, countries_layers, false, '.countries-switch')
-        get_switch(map, transport_layers, true, '.roads-switch')
+        get_switch(map, 'contours', true, '.contour-switch')
+        get_switch(map, 'countries', false, '.countries-switch')
+        get_switch(map, 'transport', true, '.roads-switch')
     </script>
 
 </body>
