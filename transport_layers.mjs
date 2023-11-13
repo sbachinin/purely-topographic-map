@@ -627,7 +627,7 @@ export const transport_layers = [
         "type": "line",
         "source": "maptiler_planet",
         "source-layer": "transportation",
-        "minzoom": 8,
+        "minzoom": 7,
         "maxzoom": 24,
         "layout": {
             "line-cap": "butt",
@@ -645,7 +645,7 @@ export const transport_layers = [
                 [
                     "zoom"
                 ],
-                8,
+                7,
                 [
                     // if trunk, 1
                     // if primary, 0.5
@@ -658,7 +658,7 @@ export const transport_layers = [
                     [
                         "trunk"
                     ],
-                    1,
+                    0.8,
                     [
                         "match",
                         [
@@ -668,7 +668,7 @@ export const transport_layers = [
                         [
                             "primary"
                         ],
-                        0.5,
+                        0.4,
                         0
                     ]
 
@@ -725,7 +725,7 @@ export const transport_layers = [
         "type": "line",
         "source": "maptiler_planet",
         "source-layer": "transportation",
-        "minzoom": 8,
+        "minzoom": 7,
         "layout": {
             "line-cap": "round",
             "line-join": "round",
@@ -742,7 +742,7 @@ export const transport_layers = [
                 [
                     "zoom"
                 ],
-                8,
+                7,
                 [
                     "match",
                     [
@@ -762,7 +762,7 @@ export const transport_layers = [
                             "bridge"
                         ],
                         0,
-                        2.5
+                        1.2
                     ],
                     0
                 ],
@@ -782,11 +782,11 @@ export const transport_layers = [
                             "get",
                             "ramp"
                         ],
-                        2,
-                        2,
-                        6
+                        1,
+                        1.5,
+                        3
                     ],
-                    1.4
+                    1.2
                 ],
                 14,
                 [
@@ -917,6 +917,10 @@ export const transport_layers = [
             "line-width": {
                 "base": 2.8,
                 "stops": [
+                    [
+                        8,
+                        2
+                    ],
                     [
                         14,
                         3

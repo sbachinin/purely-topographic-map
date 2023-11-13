@@ -56,6 +56,10 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
             top: 159px;
         }
 
+        .roads-switch {
+            top: 204px;
+        }
+
         .fullwidth-scale-wrapper {
             position: fixed;
             bottom: 10px;
@@ -122,6 +126,7 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
 
     <div class="my-button contour-switch"><img src="./contours_icon.jpg"></div>
     <div class="my-button countries-switch"><img src="./countries_icon.jpg"></div>
+    <div class="my-button roads-switch"><img src="./roads.jpg"></div>
 
     <div class="fullwidth-scale-wrapper">
         <div class="fullwidth-scale"></div>
@@ -135,6 +140,7 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
         import { manage_scale } from './manage_scale.mjs'
         import { contour_layers } from './contour_layers.mjs'
         import { countries_layers } from './countries_layers.mjs'
+        import { transport_layers } from './transport_layers.mjs'
 
         const style = {
             name: "Purely topographic map",
@@ -170,6 +176,7 @@ https://cdn.jsdelivr.net/npm/maplibre-gl@3.3.1/dist/maplibre-gl.min.css
 
         get_switch(map, contour_layers, true, '.contour-switch')
         get_switch(map, countries_layers, false, '.countries-switch')
+        get_switch(map, transport_layers, true, '.roads-switch')
     </script>
 
 </body>
